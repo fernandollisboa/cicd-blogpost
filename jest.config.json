@@ -1,0 +1,10 @@
+{
+  "testEnvironment": "node",
+  "coverageDirectory": "./coverage",
+  "collectCoverage": true,
+  "transform": {
+    "^.+\\.js$": "babel-jest"
+  },
+  "moduleNameMapper": {},
+  "globals": {}
+}
