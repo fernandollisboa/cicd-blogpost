@@ -1,0 +1,31 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ] # set the branch you want to trigger the workflow on push
+  pull_request: {} # trigger on pull requests to any branch
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci # use npm ci for clean install in CI environments
+
+      - name: Run linter
+        run: npm run lint # or the appropriate command for your linter
+
+      - name: Audit packages
+        run: npm audit --audit-level=high
+
+      - name: Run test suite
+        run: npm test
