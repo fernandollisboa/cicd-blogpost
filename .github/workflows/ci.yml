@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ] # set the branch you want to trigger the workflow on push
+    branches: ['main'] # set the branch you want to trigger the workflow on push
   pull_request: {} # trigger on pull requests to any branch
 
 jobs:
